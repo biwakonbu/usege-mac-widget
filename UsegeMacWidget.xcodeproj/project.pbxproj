@@ -1,0 +1,671 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AD5C1485D76AE8CF82C1CF9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BDDB42A6D4471F78BE9036 /* Models.swift */; };
+		2379A1320904BC5A50A64157 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2608F701F68C826E7FFCD /* AppConfig.swift */; };
+		40DFCDEC3A50DAAEF3B6D5DD /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BDDB42A6D4471F78BE9036 /* Models.swift */; };
+		4D18B3F3D66B8543DB61D5AD /* HostInboxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD5EF05DC2BBBF61DF211 /* HostInboxStore.swift */; };
+		5323051F05D5057544D4C7F0 /* HostInboxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD5EF05DC2BBBF61DF211 /* HostInboxStore.swift */; };
+		57EA6D5BF8E01C74A8655269 /* NativeMessageSchemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EC8A99AC1BC74942EA998 /* NativeMessageSchemaTests.swift */; };
+		5A44457A5673D9A57E65F50B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BDDB42A6D4471F78BE9036 /* Models.swift */; };
+		65FD540AC497F2541EDB6A1F /* UsageDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7F9A046A2832C185512F2C /* UsageDatabase.swift */; };
+		84F38EFC36C4F8F66FEBD357 /* MenuBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA2B3BAEEC5369B5DB26782 /* MenuBarMenuView.swift */; };
+		8A34FB4D9DA9085CF41CD855 /* HostInboxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAAD5EF05DC2BBBF61DF211 /* HostInboxStore.swift */; };
+		9134F9F27AE7EDEF3803BFFC /* WidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE90B7229DC9EB08E2C7 /* WidgetSnapshotStore.swift */; };
+		959CDF9A2E10C47212139E84 /* UsegeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755F2695412CB0DC5DFB32DD /* UsegeWidget.swift */; };
+		98E7C582B15AE238BF8E7480 /* UsegeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055C97292D2B4DDD407EB0E /* UsegeApp.swift */; };
+		A1866AD6FEE5CEF5471CCEAC /* WidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE90B7229DC9EB08E2C7 /* WidgetSnapshotStore.swift */; };
+		A5CA1D9B12C43C46BB383107 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2608F701F68C826E7FFCD /* AppConfig.swift */; };
+		A7F0F836EAFCBADC62843C29 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D851D1BE13D35E0F40EA3A8C /* KeychainStore.swift */; };
+		B46EC207DBD6FA43D17D7072 /* AppPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9815D902BCEE2BAE3A14D3 /* AppPaths.swift */; };
+		BE4AAAC0966DF2FB0D7E06EA /* UsegeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FA5702A6227B9290DE950700 /* UsegeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C214EC9168713A01360D2AE9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F2608F701F68C826E7FFCD /* AppConfig.swift */; };
+		C86E004F44D1273E66584BCE /* WidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CCE90B7229DC9EB08E2C7 /* WidgetSnapshotStore.swift */; };
+		CCFC3FE94AB610C2484F13C9 /* HostInboxProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915F7E09DC16F60818A04C9B /* HostInboxProcessor.swift */; };
+		CD7670042D9F0A4D8CCE0331 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB310CD1328944F859BEF25E /* main.swift */; };
+		D00391C23D6491D3A159AF27 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1E34873AFDCF9EB5BBB8D /* AppStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FBA35848345CBD10955E335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 816F7B7F9588C1E9DF026777 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D362A996B2D09A9BBF0DCD6A;
+			remoteInfo = UsegeWidgetExtension;
+		};
+		2C89ED8581CA0113A3C02D5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 816F7B7F9588C1E9DF026777 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78724506193161012A09D1B7;
+			remoteInfo = UsegeApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA3BC475FD78785F1A4E9328 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BE4AAAC0966DF2FB0D7E06EA /* UsegeWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A9463A144BBE9F9F96622A2 /* UsegeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsegeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1292C468567E50F593B9835A /* UsegeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsegeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA2B3BAEEC5369B5DB26782 /* MenuBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMenuView.swift; sourceTree = "<group>"; };
+		361EC8A99AC1BC74942EA998 /* NativeMessageSchemaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeMessageSchemaTests.swift; sourceTree = "<group>"; };
+		3A7F9A046A2832C185512F2C /* UsageDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageDatabase.swift; sourceTree = "<group>"; };
+		68BDDB42A6D4471F78BE9036 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		69A1E34873AFDCF9EB5BBB8D /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		755F2695412CB0DC5DFB32DD /* UsegeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsegeWidget.swift; sourceTree = "<group>"; };
+		75F2608F701F68C826E7FFCD /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		8055C97292D2B4DDD407EB0E /* UsegeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsegeApp.swift; sourceTree = "<group>"; };
+		915F7E09DC16F60818A04C9B /* HostInboxProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostInboxProcessor.swift; sourceTree = "<group>"; };
+		BA0CCE90B7229DC9EB08E2C7 /* WidgetSnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshotStore.swift; sourceTree = "<group>"; };
+		CAAAD5EF05DC2BBBF61DF211 /* HostInboxStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostInboxStore.swift; sourceTree = "<group>"; };
+		CC9815D902BCEE2BAE3A14D3 /* AppPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPaths.swift; sourceTree = "<group>"; };
+		D851D1BE13D35E0F40EA3A8C /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		DB310CD1328944F859BEF25E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA5702A6227B9290DE950700 /* UsegeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = UsegeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD15CDC0042A6C3F7EE0CA4 /* UsegeNativeHost */ = {isa = PBXFileReference; includeInIndex = 0; path = UsegeNativeHost; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		14DDC9265214E1200A658DD9 /* UsegeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				755F2695412CB0DC5DFB32DD /* UsegeWidget.swift */,
+			);
+			name = UsegeWidget;
+			path = Sources/UsegeWidget;
+			sourceTree = "<group>";
+		};
+		608E1C330B0F0A016C609CF7 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				75F2608F701F68C826E7FFCD /* AppConfig.swift */,
+				CAAAD5EF05DC2BBBF61DF211 /* HostInboxStore.swift */,
+				68BDDB42A6D4471F78BE9036 /* Models.swift */,
+				BA0CCE90B7229DC9EB08E2C7 /* WidgetSnapshotStore.swift */,
+			);
+			name = Shared;
+			path = Sources/Shared;
+			sourceTree = "<group>";
+		};
+		7EC3808A24F7A2FA19468B40 /* UsegeApp */ = {
+			isa = PBXGroup;
+			children = (
+				69A1E34873AFDCF9EB5BBB8D /* AppStore.swift */,
+				8055C97292D2B4DDD407EB0E /* UsegeApp.swift */,
+				BF4A50201D5EAE1D35E6056B /* Services */,
+				EE564A85C8FCFA230E56E15C /* Views */,
+			);
+			name = UsegeApp;
+			path = Sources/UsegeApp;
+			sourceTree = "<group>";
+		};
+		AAAF9992CBE672409D8FFBFD /* UsegeNativeHost */ = {
+			isa = PBXGroup;
+			children = (
+				DB310CD1328944F859BEF25E /* main.swift */,
+			);
+			name = UsegeNativeHost;
+			path = Sources/UsegeNativeHost;
+			sourceTree = "<group>";
+		};
+		BF4A50201D5EAE1D35E6056B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CC9815D902BCEE2BAE3A14D3 /* AppPaths.swift */,
+				915F7E09DC16F60818A04C9B /* HostInboxProcessor.swift */,
+				D851D1BE13D35E0F40EA3A8C /* KeychainStore.swift */,
+				3A7F9A046A2832C185512F2C /* UsageDatabase.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C1A638E309D014A89AA3D97E /* UsegeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				361EC8A99AC1BC74942EA998 /* NativeMessageSchemaTests.swift */,
+			);
+			name = UsegeAppTests;
+			path = Tests/UsegeAppTests;
+			sourceTree = "<group>";
+		};
+		C35F8DEA8244C446534E410F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A9463A144BBE9F9F96622A2 /* UsegeApp.app */,
+				1292C468567E50F593B9835A /* UsegeAppTests.xctest */,
+				FAD15CDC0042A6C3F7EE0CA4 /* UsegeNativeHost */,
+				FA5702A6227B9290DE950700 /* UsegeWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8B50C654CF5B2CA7F0F9543 = {
+			isa = PBXGroup;
+			children = (
+				608E1C330B0F0A016C609CF7 /* Shared */,
+				7EC3808A24F7A2FA19468B40 /* UsegeApp */,
+				C1A638E309D014A89AA3D97E /* UsegeAppTests */,
+				AAAF9992CBE672409D8FFBFD /* UsegeNativeHost */,
+				14DDC9265214E1200A658DD9 /* UsegeWidget */,
+				C35F8DEA8244C446534E410F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE564A85C8FCFA230E56E15C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AA2B3BAEEC5369B5DB26782 /* MenuBarMenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C319DBDCBFC71829563A889 /* UsegeNativeHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD22E10A1DB18EC480911934 /* Build configuration list for PBXNativeTarget "UsegeNativeHost" */;
+			buildPhases = (
+				E86C0591036007A628102E3F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UsegeNativeHost;
+			packageProductDependencies = (
+			);
+			productName = UsegeNativeHost;
+			productReference = FAD15CDC0042A6C3F7EE0CA4 /* UsegeNativeHost */;
+			productType = "com.apple.product-type.tool";
+		};
+		33E33C5A8F5C01FAE09D2C57 /* UsegeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A54A146E139D2ECAF6F7391 /* Build configuration list for PBXNativeTarget "UsegeAppTests" */;
+			buildPhases = (
+				9E1E9713E05BAEE8FF8E6583 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3FE0F6B23B86B7E3CCBFF79 /* PBXTargetDependency */,
+			);
+			name = UsegeAppTests;
+			packageProductDependencies = (
+			);
+			productName = UsegeAppTests;
+			productReference = 1292C468567E50F593B9835A /* UsegeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78724506193161012A09D1B7 /* UsegeApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B1BBE6E341009CD7B454F8D /* Build configuration list for PBXNativeTarget "UsegeApp" */;
+			buildPhases = (
+				B2634F9C1243C18CBEBCB164 /* Sources */,
+				AA3BC475FD78785F1A4E9328 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF834168D9B7BAB1F28D6151 /* PBXTargetDependency */,
+			);
+			name = UsegeApp;
+			packageProductDependencies = (
+			);
+			productName = UsegeApp;
+			productReference = 0A9463A144BBE9F9F96622A2 /* UsegeApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D362A996B2D09A9BBF0DCD6A /* UsegeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91956E413618A97950AB34C6 /* Build configuration list for PBXNativeTarget "UsegeWidgetExtension" */;
+			buildPhases = (
+				D19AB6CF83EB1870E894E6F6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UsegeWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = UsegeWidgetExtension;
+			productReference = FA5702A6227B9290DE950700 /* UsegeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		816F7B7F9588C1E9DF026777 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 7277DEC2660C3DFD7C5BF13E /* Build configuration list for PBXProject "UsegeMacWidget" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E8B50C654CF5B2CA7F0F9543;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78724506193161012A09D1B7 /* UsegeApp */,
+				33E33C5A8F5C01FAE09D2C57 /* UsegeAppTests */,
+				0C319DBDCBFC71829563A889 /* UsegeNativeHost */,
+				D362A996B2D09A9BBF0DCD6A /* UsegeWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E1E9713E05BAEE8FF8E6583 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57EA6D5BF8E01C74A8655269 /* NativeMessageSchemaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2634F9C1243C18CBEBCB164 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2379A1320904BC5A50A64157 /* AppConfig.swift in Sources */,
+				B46EC207DBD6FA43D17D7072 /* AppPaths.swift in Sources */,
+				D00391C23D6491D3A159AF27 /* AppStore.swift in Sources */,
+				CCFC3FE94AB610C2484F13C9 /* HostInboxProcessor.swift in Sources */,
+				8A34FB4D9DA9085CF41CD855 /* HostInboxStore.swift in Sources */,
+				A7F0F836EAFCBADC62843C29 /* KeychainStore.swift in Sources */,
+				84F38EFC36C4F8F66FEBD357 /* MenuBarMenuView.swift in Sources */,
+				5A44457A5673D9A57E65F50B /* Models.swift in Sources */,
+				65FD540AC497F2541EDB6A1F /* UsageDatabase.swift in Sources */,
+				98E7C582B15AE238BF8E7480 /* UsegeApp.swift in Sources */,
+				C86E004F44D1273E66584BCE /* WidgetSnapshotStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D19AB6CF83EB1870E894E6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C214EC9168713A01360D2AE9 /* AppConfig.swift in Sources */,
+				4D18B3F3D66B8543DB61D5AD /* HostInboxStore.swift in Sources */,
+				40DFCDEC3A50DAAEF3B6D5DD /* Models.swift in Sources */,
+				959CDF9A2E10C47212139E84 /* UsegeWidget.swift in Sources */,
+				9134F9F27AE7EDEF3803BFFC /* WidgetSnapshotStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E86C0591036007A628102E3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5CA1D9B12C43C46BB383107 /* AppConfig.swift in Sources */,
+				5323051F05D5057544D4C7F0 /* HostInboxStore.swift in Sources */,
+				1AD5C1485D76AE8CF82C1CF9 /* Models.swift in Sources */,
+				A1866AD6FEE5CEF5471CCEAC /* WidgetSnapshotStore.swift in Sources */,
+				CD7670042D9F0A4D8CCE0331 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3FE0F6B23B86B7E3CCBFF79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78724506193161012A09D1B7 /* UsegeApp */;
+			targetProxy = 2C89ED8581CA0113A3C02D5F /* PBXContainerItemProxy */;
+		};
+		EF834168D9B7BAB1F28D6151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D362A996B2D09A9BBF0DCD6A /* UsegeWidgetExtension */;
+			targetProxy = 0FBA35848345CBD10955E335 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0CC165AF62D2179671C582FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Usege.app/Contents/MacOS/Usege";
+			};
+			name = Release;
+		};
+		112989F16D9E8762618E4919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.nativehost;
+				PRODUCT_NAME = "usege-native-host";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		1A2F143729C8C8B8D87C6CB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.nativehost;
+				PRODUCT_NAME = "usege-native-host";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2DE0B2D2A65230D3F44EE7F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Release;
+		};
+		708BA29F1DFB01EA7BB0F949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = Config/UsegeApp.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				INFOPLIST_FILE = "Config/UsegeApp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.app;
+				PRODUCT_NAME = Usege;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D3A5D18B6627F17A8A5D6F66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = Config/UsegeWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				INFOPLIST_FILE = "Config/UsegeWidget-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.app.widget;
+				PRODUCT_NAME = UsegeWidgetExtension;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D6F3E0207664DDE690E6DB94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = Config/UsegeApp.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				INFOPLIST_FILE = "Config/UsegeApp-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.app;
+				PRODUCT_NAME = Usege;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DABEA0CD0049B0E68D15971E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Usege.app/Contents/MacOS/Usege";
+			};
+			name = Debug;
+		};
+		DCFE1DCAD2645E0C98CACB53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_ENTITLEMENTS = Config/UsegeWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = YES;
+				INFOPLIST_FILE = "Config/UsegeWidget-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.usege.macwidget.app.widget;
+				PRODUCT_NAME = UsegeWidgetExtension;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E4B539E2408B3F6E87F699BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6A54A146E139D2ECAF6F7391 /* Build configuration list for PBXNativeTarget "UsegeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DABEA0CD0049B0E68D15971E /* Debug */,
+				0CC165AF62D2179671C582FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7277DEC2660C3DFD7C5BF13E /* Build configuration list for PBXProject "UsegeMacWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4B539E2408B3F6E87F699BE /* Debug */,
+				2DE0B2D2A65230D3F44EE7F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		91956E413618A97950AB34C6 /* Build configuration list for PBXNativeTarget "UsegeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCFE1DCAD2645E0C98CACB53 /* Debug */,
+				D3A5D18B6627F17A8A5D6F66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9B1BBE6E341009CD7B454F8D /* Build configuration list for PBXNativeTarget "UsegeApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				708BA29F1DFB01EA7BB0F949 /* Debug */,
+				D6F3E0207664DDE690E6DB94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AD22E10A1DB18EC480911934 /* Build configuration list for PBXNativeTarget "UsegeNativeHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A2F143729C8C8B8D87C6CB0 /* Debug */,
+				112989F16D9E8762618E4919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 816F7B7F9588C1E9DF026777 /* Project object */;
+}

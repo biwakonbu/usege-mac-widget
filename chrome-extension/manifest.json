@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "usege sync bridge",
+  "version": "0.1.0",
+  "description": "Collects AI usage data from logged-in tabs and forwards snapshots to native host.",
+  "permissions": [
+    "alarms",
+    "tabs",
+    "scripting",
+    "storage",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://cursor.com/*",
+    "https://aistudio.google.com/*",
+    "https://console.cloud.google.com/*",
+    "https://z.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Run usege sync now"
+  }
+}

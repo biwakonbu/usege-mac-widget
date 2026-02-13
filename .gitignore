@@ -1,0 +1,17 @@
+# Xcode / Swift
+.DS_Store
+DerivedData/
+.derived/
+.build/
+*.xcuserstate
+xcuserdata/
+
+# SwiftPM / coverage
+.swiftpm/
+*.profraw
+
+# Node
+node_modules/
+
+# Local temp
+*.log
