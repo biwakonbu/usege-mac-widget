@@ -26,14 +26,19 @@ Mac ネイティブの MenuBar + Widget で AI サービス使用量を可視化
 - 拡張カードの `ID: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` を控える
   - 見えない場合: 「詳細」を開いて URL の `?id=<EXTENSION_ID>` から取得
 
-2. Native Host をビルド + manifest 配置
+2. Native Host + Usege.app をビルドし、manifest + アプリを配置
 ```bash
 make install EXTENSION_ID=<YOUR_EXTENSION_ID>
+```
+- 既定のアプリ配置先: `~/Applications/Usege.app`
+- 変更したい場合:
+```bash
+make install EXTENSION_ID=<YOUR_EXTENSION_ID> INSTALL_DIR=/path/to/apps
 ```
 
 3. UsegeApp を起動
 ```bash
-open .derived/Build/Products/Debug/Usege.app
+open ~/Applications/Usege.app
 ```
 
 4. 反映確認（任意）

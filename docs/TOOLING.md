@@ -13,12 +13,14 @@
 `/Users/biwakonbu/github/usege-mac-widget/Makefile`
 
 ### `make install EXTENSION_ID=<id>`
-- 目的: Native Host のビルドと Native Messaging manifest の配置を一括実行
+- 目的: Native Host + Usege.app のビルド、manifest + アプリ配置を一括実行
 - 内部で実行:
   1. `make build-native-host`
   2. `./scripts/install_native_host.sh <host_binary> <EXTENSION_ID>`
+  3. `make install-app`
 - 配置先（既定）:
   - `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.usege.sync.host.json`
+  - `~/Applications/Usege.app`
 - 失敗条件:
   - `EXTENSION_ID` 未指定
   - `xcodebuild` 失敗
@@ -28,8 +30,23 @@
 - 出力:
   - `.derived/Build/Products/Debug/usege-native-host`
 
+### `make build-app`
+- 目的: `Usege.app` のみビルド
+- 出力:
+  - `.derived/Build/Products/Debug/Usege.app`
+
+### `make install-app [INSTALL_DIR=...]`
+- 目的: ビルド済み `Usege.app` をローカル配置
+- 既定配置先:
+  - `~/Applications/Usege.app`
+- 上書き:
+  - `INSTALL_DIR=/path/to/apps`
+
 ### `make run-app`
 - 目的: `Usege.app` を起動
+- 挙動:
+  - `~/Applications/Usege.app` があればそれを起動
+  - なければ `.derived/.../Usege.app` を起動
 
 ### `make test`
 - 目的: Swift Unit Test + Chrome parser test をまとめて実行
@@ -76,4 +93,9 @@
 ```bash
 NATIVE_MESSAGING_HOST_DIR=/tmp/usege-host \
 make install EXTENSION_ID=<id>
+```
+
+### アプリ配置先を変更したい
+```bash
+make install EXTENSION_ID=<id> INSTALL_DIR=/path/to/apps
 ```

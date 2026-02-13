@@ -4,15 +4,21 @@ PROJECT := UsegeMacWidget.xcodeproj
 XCODEGEN_SPEC := project.yml
 DERIVED_DATA := .derived
 HOST_SCHEME := UsegeNativeHost
+APP_SCHEME := UsegeApp
 HOST_BINARY := $(CURDIR)/$(DERIVED_DATA)/Build/Products/Debug/usege-native-host
+APP_BUNDLE := $(CURDIR)/$(DERIVED_DATA)/Build/Products/Debug/Usege.app
+INSTALL_DIR ?= $(HOME)/Applications
+INSTALLED_APP := $(INSTALL_DIR)/Usege.app
 
-.PHONY: help ensure-project build-native-host install-native-host install run-app test test-swift test-extension
+.PHONY: help ensure-project build-native-host build-app install-native-host install-app install run-app test test-swift test-extension
 
 help:
 	@echo "Available targets:"
-	@echo "  make install EXTENSION_ID=<chrome_extension_id>  # Build native host and install manifest"
+	@echo "  make install EXTENSION_ID=<chrome_extension_id>  # Build host + app, install manifest + app"
 	@echo "  make build-native-host                            # Build only native host"
-	@echo "  make run-app                                      # Launch Usege.app"
+	@echo "  make build-app                                    # Build only Usege.app"
+	@echo "  make install-app [INSTALL_DIR=~/Applications]    # Copy Usege.app into INSTALL_DIR"
+	@echo "  make run-app                                      # Launch installed Usege.app if present, else derived app"
 	@echo "  make test                                         # Run Swift + extension tests"
 
 ensure-project:
@@ -34,6 +40,13 @@ build-native-host: ensure-project
 		-derivedDataPath "$(DERIVED_DATA)" \
 		build
 
+build-app: ensure-project
+	xcodebuild -project "$(PROJECT)" \
+		-scheme "$(APP_SCHEME)" \
+		-configuration Debug \
+		-derivedDataPath "$(DERIVED_DATA)" \
+		build
+
 install-native-host: build-native-host
 	@if [[ -z "$(EXTENSION_ID)" ]]; then \
 		echo "ERROR: EXTENSION_ID is required."; \
@@ -42,14 +55,23 @@ install-native-host: build-native-host
 	fi
 	./scripts/install_native_host.sh "$(HOST_BINARY)" "$(EXTENSION_ID)"
 
-install: install-native-host
+install-app: build-app
+	@mkdir -p "$(INSTALL_DIR)"
+	@ditto "$(APP_BUNDLE)" "$(INSTALLED_APP)"
+	@echo "Installed app: $(INSTALLED_APP)"
+
+install: install-native-host install-app
 	@echo "Installed native messaging manifest for extension: $(EXTENSION_ID)"
 	@echo "Next:"
 	@echo "  1) Open chrome://extensions and load $(CURDIR)/chrome-extension"
-	@echo "  2) Open $(CURDIR)/.derived/Build/Products/Debug/Usege.app"
+	@echo "  2) Launch $(INSTALLED_APP)"
 
 run-app: ensure-project
-	open "$(CURDIR)/$(DERIVED_DATA)/Build/Products/Debug/Usege.app"
+	@if [[ -d "$(INSTALLED_APP)" ]]; then \
+		open "$(INSTALLED_APP)"; \
+	else \
+		open "$(APP_BUNDLE)"; \
+	fi
 
 test: test-swift test-extension
 
