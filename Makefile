@@ -10,7 +10,7 @@ APP_BUNDLE := $(CURDIR)/$(DERIVED_DATA)/Build/Products/Debug/Usege.app
 INSTALL_DIR ?= $(HOME)/Applications
 INSTALLED_APP := $(INSTALL_DIR)/Usege.app
 
-.PHONY: help ensure-project build-native-host build-app install-native-host install-app install run-app test test-swift test-extension
+.PHONY: help ensure-project build-native-host build-app install-native-host install-app install run-app reset-data test test-swift test-extension
 
 help:
 	@echo "Available targets:"
@@ -19,6 +19,7 @@ help:
 	@echo "  make build-app                                    # Build only Usege.app"
 	@echo "  make install-app [INSTALL_DIR=~/Applications]    # Copy Usege.app into INSTALL_DIR"
 	@echo "  make run-app                                      # Launch installed Usege.app if present, else derived app"
+	@echo "  make reset-data                                   # Remove local DB/widget/inbox cache for clean resync"
 	@echo "  make test                                         # Run Swift + extension tests"
 
 ensure-project:
@@ -72,6 +73,14 @@ run-app: ensure-project
 	else \
 		open "$(APP_BUNDLE)"; \
 	fi
+
+reset-data:
+	@echo "Resetting local usege data..."
+	@rm -f "$(HOME)/Library/Application Support/Usege/usege.sqlite3"* \
+		"$(HOME)/Library/Application Support/Usege/widget_snapshot.json"
+	@rm -f "$(HOME)/Library/Application Support/UsegeNativeHost/inbox/"*.json 2>/dev/null || true
+	@defaults delete com.usege.macwidget.app provider_error_state_v1 >/dev/null 2>&1 || true
+	@echo "Reset complete."
 
 test: test-swift test-extension
 

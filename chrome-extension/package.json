@@ -4,6 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test parsers.test.mjs"
+    "test": "node --test parsers.test.mjs provider-rules.test.mjs"
   }
 }

@@ -30,7 +30,7 @@ struct UsegeWidgetProvider: TimelineProvider {
                 ProviderSnapshot(
                     provider: .codex,
                     displayName: "Codex",
-                    costUSD: 12.4,
+                    costUSD: 0,
                     deltaDayUSD: 1.2,
                     rateLimit5h: 31.0,
                     rateLimit1w: 58.0,
@@ -41,7 +41,7 @@ struct UsegeWidgetProvider: TimelineProvider {
                     errorMessage: nil
                 )
             ],
-            totalCostUSD: 12.4,
+            totalCostUSD: 0,
             totalDeltaDayUSD: 1.2,
             staleCount: 0
         )
@@ -62,9 +62,9 @@ struct UsegeWidgetView: View {
                     .foregroundStyle(.secondary)
             }
 
-            Text(entry.snapshot.totalCostUSD, format: .currency(code: "USD"))
-                .font(.title3)
-                .fontWeight(.semibold)
+            Text("Cost tracking OFF")
+                .font(.caption)
+                .foregroundStyle(.secondary)
 
             Text("Today \(entry.snapshot.totalDeltaDayUSD >= 0 ? "+" : "")\(entry.snapshot.totalDeltaDayUSD, format: .currency(code: "USD"))")
                 .font(.caption)
@@ -77,7 +77,7 @@ struct UsegeWidgetView: View {
                     Text(provider.displayName)
                         .font(.caption)
                     Spacer()
-                    Text(provider.costUSD.map { $0.formatted(.currency(code: "USD")) } ?? "N/A")
+                    Text(deltaText(for: provider))
                         .font(.caption.monospacedDigit())
                 }
             }
@@ -90,6 +90,14 @@ struct UsegeWidgetView: View {
         }
         .padding(12)
         .containerBackground(.fill.tertiary, for: .widget)
+    }
+
+    private func deltaText(for provider: ProviderSnapshot) -> String {
+        guard let delta = provider.deltaDayUSD else {
+            return "Today N/A"
+        }
+        let sign = delta >= 0 ? "+" : ""
+        return "Today \(sign)\(delta.formatted(.currency(code: "USD")))"
     }
 }
 

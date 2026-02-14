@@ -29,9 +29,9 @@ struct MenuBarMenuView: View {
         VStack(alignment: .leading, spacing: 4) {
             Text("usege")
                 .font(.headline)
-            Text("Total: \(store.totalCostUSD, format: .currency(code: "USD"))")
-                .font(.title3)
-                .fontWeight(.semibold)
+            Text("Cost tracking: OFF")
+                .font(.caption)
+                .foregroundStyle(.secondary)
             Text("Today: \(store.totalDeltaDayUSD >= 0 ? "+" : "")\(store.totalDeltaDayUSD, format: .currency(code: "USD"))")
                 .foregroundStyle(store.totalDeltaDayUSD >= 0 ? .green : .red)
             Text(statusLine)
@@ -103,8 +103,6 @@ private struct ProviderRowView: View {
             Spacer()
 
             VStack(alignment: .trailing, spacing: 2) {
-                Text(snapshot.costUSD.map { $0.formatted(.currency(code: "USD")) } ?? "N/A")
-                    .font(.body.monospacedDigit())
                 Text(deltaText)
                     .font(.caption.monospacedDigit())
                     .foregroundStyle((snapshot.deltaDayUSD ?? 0) >= 0 ? .green : .red)

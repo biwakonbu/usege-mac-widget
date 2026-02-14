@@ -148,6 +148,10 @@ actor UsageDatabase {
             throw DatabaseError.invalidPayload("usage_snapshot payload is incomplete")
         }
 
+        guard provider.matchesUsageURL(sourceURL) else {
+            throw DatabaseError.invalidPayload("source_url does not match provider usage URL: \(sourceURL.absoluteString)")
+        }
+
         let id = UUID().uuidString
         let now = ISO8601DateFormatter.defaultFormatter.string(from: Date())
 

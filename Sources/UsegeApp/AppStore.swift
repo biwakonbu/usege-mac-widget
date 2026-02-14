@@ -101,12 +101,24 @@ final class AppStore: ObservableObject {
                 return
             }
 
+            var successCount = 0
+            var failureCount = 0
             for message in messages {
-                try await process(message)
+                do {
+                    try await process(message)
+                    successCount += 1
+                } catch {
+                    failureCount += 1
+                    await recordProcessFailure(error, for: message)
+                }
             }
 
             lastSyncAt = Date()
-            statusMessage = "同期完了: \(messages.count) 件"
+            if failureCount == 0 {
+                statusMessage = "同期完了: \(successCount) 件"
+            } else {
+                statusMessage = "同期完了: \(successCount) 件 / 失敗: \(failureCount) 件"
+            }
             persistErrors()
 
             try await refreshUIAndWidget()
@@ -121,6 +133,36 @@ final class AppStore: ObservableObject {
             } catch {
                 statusMessage = "同期失敗 / sync_runs 保存失敗"
             }
+        }
+    }
+
+    private func recordProcessFailure(_ error: Error, for message: InboundMessage) async {
+        let code: SyncErrorCode
+        let detail: String
+
+        switch error {
+        case DatabaseError.invalidPayload(let detailMessage):
+            code = .invalidPayload
+            detail = detailMessage
+        case DatabaseError.sqlite(let detailMessage):
+            code = .unknown
+            detail = "SQLite error: \(detailMessage)"
+        default:
+            code = .unknown
+            detail = error.localizedDescription
+        }
+
+        let provider = message.payload.provider?.rawValue ?? "unknown"
+        let fullMessage = "[\(provider)] inbox process failed (\(message.id)): \(detail)"
+
+        do {
+            try await database.insertSyncRun(
+                status: "failure",
+                errorCode: code,
+                errorMessage: fullMessage
+            )
+        } catch {
+            statusMessage = "同期失敗 / sync_runs 保存失敗"
         }
     }
 

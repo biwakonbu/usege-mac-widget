@@ -41,4 +41,66 @@ final class NativeMessageSchemaTests: XCTestCase {
         XCTAssertTrue(StalePolicy.isStale(capturedAt: stale, now: now))
         XCTAssertTrue(StalePolicy.isStale(capturedAt: nil, now: now))
     }
+
+    func testProviderMatchesUsageURL() {
+        XCTAssertTrue(
+            Provider.codex.matchesUsageURL(
+                URL(string: "https://chatgpt.com/codex/settings/usage?tab=billing#limits")!
+            )
+        )
+        XCTAssertTrue(
+            Provider.codex.matchesUsageURL(
+                URL(string: "https://chatgpt.com/codex/settings/usage/")!
+            )
+        )
+        XCTAssertFalse(
+            Provider.codex.matchesUsageURL(
+                URL(string: "https://chatgpt.com/codex")!
+            )
+        )
+        XCTAssertFalse(
+            Provider.codex.matchesUsageURL(
+                URL(string: "https://example.com/codex/settings/usage")!
+            )
+        )
+    }
+
+    func testInsertUsageSnapshotRejectsMismatchedSourceURL() async throws {
+        let tempDir = FileManager.default.temporaryDirectory
+            .appendingPathComponent("UsegeAppTests-\(UUID().uuidString)", isDirectory: true)
+        try FileManager.default.createDirectory(at: tempDir, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: tempDir) }
+
+        let database = try UsageDatabase(databaseURL: tempDir.appendingPathComponent("usege.sqlite3"))
+        let payload = NativeMessageV1(
+            v: 1,
+            type: "usage_snapshot",
+            provider: .codex,
+            capturedAt: Date(),
+            sourceURL: URL(string: "https://chatgpt.com/pricing")!,
+            metrics: UsageMetrics(
+                costUSD: 10.5,
+                deltaDayUSD: 1.2,
+                rateLimit5h: 25,
+                rateLimit1w: 40
+            ),
+            parserVersion: "codex.v2",
+            errorCode: nil,
+            errorMessage: nil
+        )
+
+        do {
+            _ = try await database.insertUsageSnapshot(message: payload, rawJSON: "{}")
+            XCTFail("Expected invalid payload error")
+        } catch let error as DatabaseError {
+            switch error {
+            case .invalidPayload:
+                break
+            default:
+                XCTFail("Unexpected DatabaseError: \(error)")
+            }
+        } catch {
+            XCTFail("Unexpected error: \(error)")
+        }
+    }
 }

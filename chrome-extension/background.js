@@ -1,30 +1,8 @@
 import { parseUsageFromText } from "./parsers.mjs";
+import { PROVIDER_RULES, isUsageUrl } from "./provider-rules.mjs";
 
 const HOST_NAME = "com.usege.sync.host";
 const ALARM_NAME = "usege-sync-5m";
-
-const PROVIDERS = {
-  codex: {
-    sourceUrl: "https://chatgpt.com/codex/settings/usage",
-    tabPatterns: ["https://chatgpt.com/*"]
-  },
-  claude: {
-    sourceUrl: "https://claude.ai/*",
-    tabPatterns: ["https://claude.ai/*"]
-  },
-  cursor: {
-    sourceUrl: "https://cursor.com/*",
-    tabPatterns: ["https://cursor.com/*"]
-  },
-  gemini: {
-    sourceUrl: "https://aistudio.google.com/*",
-    tabPatterns: ["https://aistudio.google.com/*", "https://console.cloud.google.com/*"]
-  },
-  zai: {
-    sourceUrl: "https://z.ai/manage-apikey/subscription",
-    tabPatterns: ["https://z.ai/*"]
-  }
-};
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -72,7 +50,7 @@ async function readTabText(tabId) {
 }
 
 async function pickProviderTab(providerName) {
-  const provider = PROVIDERS[providerName];
+  const provider = PROVIDER_RULES[providerName];
   if (!provider) {
     return null;
   }
@@ -85,7 +63,12 @@ async function pickProviderTab(providerName) {
     return null;
   }
 
-  return tabs.find((tab) => tab.active) || tabs[0];
+  const usageTabs = tabs.filter((tab) => isUsageUrl(providerName, tab.url || ""));
+  if (!usageTabs.length) {
+    return null;
+  }
+
+  return usageTabs.find((tab) => tab.active) || usageTabs[0];
 }
 
 function buildSyncError(provider, code, message, sourceUrl) {
@@ -101,14 +84,14 @@ function buildSyncError(provider, code, message, sourceUrl) {
 }
 
 async function syncOneProvider(providerName) {
-  const provider = PROVIDERS[providerName];
+  const provider = PROVIDER_RULES[providerName];
   const tab = await pickProviderTab(providerName);
 
   if (!tab || !tab.id) {
     const payload = buildSyncError(
       providerName,
       "AUTH_REQUIRED",
-      `${providerName} の使用量ページを開いた状態で再実行してください。`,
+      `${providerName} の使用量ページ (${provider.sourceUrl}) を開いた状態で再実行してください。`,
       provider.sourceUrl
     );
     await sendNativeWithRetry(payload);
@@ -123,6 +106,17 @@ async function syncOneProvider(providerName) {
       providerName,
       "AUTH_REQUIRED",
       `タブへのアクセスに失敗しました: ${error.message}`,
+      provider.sourceUrl
+    );
+    await sendNativeWithRetry(payload);
+    return;
+  }
+
+  if (!isUsageUrl(providerName, capture.url || "")) {
+    const payload = buildSyncError(
+      providerName,
+      "AUTH_REQUIRED",
+      `${providerName} の使用量ページ (${provider.sourceUrl}) が開かれていません。`,
       provider.sourceUrl
     );
     await sendNativeWithRetry(payload);
@@ -156,7 +150,7 @@ async function syncOneProvider(providerName) {
 }
 
 async function runSyncCycle(trigger) {
-  for (const providerName of Object.keys(PROVIDERS)) {
+  for (const providerName of Object.keys(PROVIDER_RULES)) {
     try {
       await syncOneProvider(providerName);
     } catch (error) {
@@ -165,7 +159,7 @@ async function runSyncCycle(trigger) {
         providerName,
         "HOST_UNAVAILABLE",
         `Native host unavailable: ${error.message}`,
-        PROVIDERS[providerName].sourceUrl
+        PROVIDER_RULES[providerName].sourceUrl
       );
 
       try {

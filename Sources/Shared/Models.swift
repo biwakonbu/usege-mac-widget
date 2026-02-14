@@ -43,6 +43,25 @@ enum Provider: String, Codable, CaseIterable, Identifiable {
             return URL(string: "https://antigravity.example.invalid")!
         }
     }
+
+    func matchesUsageURL(_ url: URL) -> Bool {
+        guard
+            let canonical = URLComponents(url: sourceURL, resolvingAgainstBaseURL: false),
+            let target = URLComponents(url: url, resolvingAgainstBaseURL: false),
+            let canonicalHost = canonical.host?.lowercased(),
+            let targetHost = target.host?.lowercased()
+        else {
+            return false
+        }
+
+        return canonicalHost == targetHost
+            && Self.normalizedPath(canonical.path) == Self.normalizedPath(target.path)
+    }
+
+    private static func normalizedPath(_ path: String) -> String {
+        let trimmed = path.replacingOccurrences(of: "/+$", with: "", options: .regularExpression)
+        return trimmed.isEmpty ? "/" : trimmed
+    }
 }
 
 enum ProviderStatus: String, Codable {

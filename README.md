@@ -92,7 +92,8 @@ xcodebuild -project UsegeMacWidget.xcodeproj -scheme UsegeAppTests -destination 
 ```
 
 ## 注意
-- DOM parser は provider ごとに `*.v1` バージョンで管理。
+- DOM parser は provider ごとに `*.v4` バージョンで管理。
+- コスト (`cost_usd`) の収集は停止中。現在は `0` 固定で保存し、UI表示も無効化。
 - 取得失敗時は `AUTH_REQUIRED` / `PARSER_BROKEN` / `HOST_UNAVAILABLE` を扱う。
 - Widget の stale 判定は `generated_at` / `captured_at` から 10 分超を stale とする。
 

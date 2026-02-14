@@ -48,6 +48,14 @@
   - `~/Applications/Usege.app` があればそれを起動
   - なければ `.derived/.../Usege.app` を起動
 
+### `make reset-data`
+- 目的: ローカル保存データを削除して誤データを完全初期化する
+- 削除対象:
+  - `~/Library/Application Support/Usege/usege.sqlite3*`
+  - `~/Library/Application Support/Usege/widget_snapshot.json`
+  - `~/Library/Application Support/UsegeNativeHost/inbox/*.json`
+  - `defaults delete com.usege.macwidget.app provider_error_state_v1`（存在時のみ）
+
 ### `make test`
 - 目的: Swift Unit Test + Chrome parser test をまとめて実行
 - 内部で実行:
